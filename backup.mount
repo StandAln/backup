@@ -1,0 +1,11 @@
+
+[Unit]
+Description=Mount for backup
+Before=local-fs.target
+BindsTo=backup.service
+
+[Mount]
+Where=/backup
+What=/dev/sdb1
+Type=ext4
+Options=defaults

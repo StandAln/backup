@@ -1,0 +1,13 @@
+
+[Unit]
+Description=Creating /opt/scripts/create_user backup
+Requires=backup.mount
+After=backup.mount
+
+[Service]
+Type=oneshot
+#User=backup
+ExecStart=/usr/local/bin/backup.sh
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=backup
